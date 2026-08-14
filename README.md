@@ -56,10 +56,10 @@ The recruiter provides a Job Description and uploads candidate resumes. The syst
                  └──────────┬───────────┘
                             │
                             │
-┌─────────────────┐         ▼
-│ Candidate Resume│ ──► Resume Text Extraction
-└─────────────────┘         │
-                            ▼
+         
+    Candidate Resume ── Resume Text Extraction
+                            │
+                            
                  ┌──────────────────────┐
                  │   NLP Processing     │
                  │      TF-IDF          │
