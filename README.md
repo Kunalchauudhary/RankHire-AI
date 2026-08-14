@@ -103,22 +103,18 @@ RankHire-AI converts both the Job Description and candidate resumes into numeric
 ## 📂 Project Structure
 
 RankHire-AI/
-│
-├── app.py
-├── requirements.txt
-├── resume_screening.db
-│
-├── templates/
-│   └── index.html
-│
-├── static/
-│   ├── css/
-│   └── js/
-│
-├── uploads/
-│
-├── PROJECT_DETAILS.md
-├── RUN_GUIDE.txt
-├── Project_Report.docx
-├── Project_Presentation.pptx
-└── README.md
+
+    app.py
+    requirements.txt
+    resume_screening.db
+    templates/
+    index.html
+    static/
+    ├── css/
+    └── js/
+    uploads/
+    PROJECT_DETAILS.md
+    RUN_GUIDE.txt
+    Project_Report.docx
+    Project_Presentation.pptx
+    README.md
