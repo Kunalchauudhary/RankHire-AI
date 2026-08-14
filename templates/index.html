@@ -1,0 +1,53 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AI Resume Screening</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+<nav><div class="brand">AI Resume Screening</div><div><a href="/">Screen</a><a href="/candidates">Candidates</a><a href="/about">About</a></div></nav>
+<main>
+<section class="hero">
+<h1>Smart Resume Screening & Candidate Ranking</h1>
+<p>Upload a candidate resume and compare it with a job description using NLP and machine-learning based text similarity.</p>
+</section>
+
+{% with messages = get_flashed_messages(with_categories=true) %}
+{% for category, message in messages %}<div class="alert {{category}}">{{message}}</div>{% endfor %}
+{% endwith %}
+
+<form method="POST" enctype="multipart/form-data" class="card">
+<label>Job Description</label>
+<textarea name="job_description" placeholder="Example: Looking for a Python developer with SQL, Flask, Git and Machine Learning skills..." required></textarea>
+<label>Candidate Resume (PDF/TXT)</label>
+<input type="file" name="resume" accept=".pdf,.txt" required>
+<button type="submit">Screen Resume</button>
+</form>
+
+{% if result %}
+<section class="card result">
+<h2>Screening Result</h2>
+<div class="summary">
+<div><b>Candidate</b><span>{{result.name}}</span></div>
+<div><b>Email</b><span>{{result.email}}</span></div>
+<div><b>Resume</b><span>{{result.filename}}</span></div>
+</div>
+<div class="score-circle"><strong>{{result.score}}%</strong><span>Match Score</span></div>
+<h2 class="center">{{result.recommendation}}</h2>
+<div class="columns">
+<div><h3>Matched Skills</h3>
+{% for skill in result.matched %}<span class="tag good">{{skill}}</span>{% else %}<p>No matched skills detected.</p>{% endfor %}
+</div>
+<div><h3>Missing Skills</h3>
+{% for skill in result.missing %}<span class="tag bad">{{skill}}</span>{% else %}<p>No major missing skills detected.</p>{% endfor %}
+</div>
+</div>
+</section>
+{% endif %}
+</main>
+<footer>College AI Project • Smart Resume Screening System</footer>
+</body>
+</html>

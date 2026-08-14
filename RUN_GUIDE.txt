@@ -1,0 +1,27 @@
+FSP PROJECT RUN GUIDE
+
+1. Install Python 3.10+.
+2. Open this project folder in VS Code.
+3. Open Terminal in the project folder.
+4. Create virtual environment:
+   Windows: python -m venv venv
+   macOS/Linux: python3 -m venv venv
+5. Activate:
+   Windows: venv\Scripts\activate
+   macOS/Linux: source venv/bin/activate
+6. Install:
+   pip install -r requirements.txt
+7. Run:
+   python app.py
+8. Open:
+   http://127.0.0.1:5000
+
+DEMO:
+- Enter a realistic job description.
+- Upload a PDF resume.
+- Click Screen Resume.
+- Show the match score, recommendation, matched skills and missing skills.
+- Open Candidates to show ranking.
+
+IMPORTANT:
+For an actual college/FSP submission, replace demo/placeholder project details with your own student/team details and follow your portal's required format.

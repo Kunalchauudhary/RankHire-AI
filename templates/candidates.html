@@ -1,0 +1,21 @@
+
+<!DOCTYPE html>
+<html>
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Candidates</title><link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}"></head>
+<body>
+<nav><div class="brand">AI Resume Screening</div><div><a href="/">Screen</a><a href="/candidates">Candidates</a><a href="/about">About</a></div></nav>
+<main>
+<section class="hero"><h1>Candidate Ranking</h1><p>All screened candidates are stored locally and sorted by match score.</p></section>
+<section class="card table-wrap">
+<table>
+<thead><tr><th>Rank</th><th>Name</th><th>Email</th><th>Score</th><th>Recommendation</th><th>Matched Skills</th><th>Date</th></tr></thead>
+<tbody>
+{% for c in candidates %}
+<tr><td>{{loop.index}}</td><td>{{c['name']}}</td><td>{{c['email']}}</td><td><b>{{c['score']}}%</b></td><td>{{c['recommendation']}}</td><td>{{c['matched_skills'] or '-'}}</td><td>{{c['created_at']}}</td></tr>
+{% else %}<tr><td colspan="7">No candidates screened yet.</td></tr>{% endfor %}
+</tbody>
+</table>
+</section>
+</main>
+</body>
+</html>
