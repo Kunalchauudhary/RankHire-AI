@@ -46,7 +46,6 @@ The recruiter provides a Job Description and uploads candidate resumes. The syst
 
 ---
 ## 🏗️ System WorkfloW
-**
                  ┌──────────────────────┐
                  │     Job Description  │
                  └──────────┬───────────┘
